@@ -1,6 +1,12 @@
-# declare AWS resource provider
 provider "aws" {
-  region = "us-east-1"
-}
+  profile = "default"
+  region  = "us-east-2"
 
-# create a Virtual Private Cloud VPC
+  default_tags {
+    tags = {
+      Environment     = "Test"
+      Service         = "Example"
+      HashiCorp-Learn = "aws-default-tags"
+    }
+  }
+}
