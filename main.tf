@@ -1,12 +1,15 @@
-provider "aws" {
-  profile = "default"
-  region  = "us-east-2"
-
-  default_tags {
-    tags = {
-      Environment     = "Test"
-      Service         = "Example"
-      HashiCorp-Learn = "aws-default-tags"
+terraform {
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "~> 5.92"
     }
   }
+  required_version = ">= 1.2"
 }
+
+provider "aws" {
+  region = "us-west-2"
+}
+
+
